@@ -9,7 +9,9 @@ app.get('/health',(req,res)=>{
 })
 
 app.post("/use-graph", async (req,res)=>{
-    await useGraph("Why we use Dokcer?")
+    const result = await useGraph("Write an code for Factorial function in js")
+
+    res.json(result)  
 })
 
 export default app
