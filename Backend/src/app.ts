@@ -8,7 +8,7 @@ app.get('/health',(req,res)=>{
     res.status(200).json({ status: 'ok' })
 })
 
-app.post("/use-graph", async (req,res)=>{
+app.get("/use-graph", async (req,res)=>{
     const result = await useGraph("Write an code for Factorial function in js")
 
     res.json(result)  

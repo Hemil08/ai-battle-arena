@@ -79,10 +79,10 @@ const judgeNode:GraphNode<typeof State> = async (state) => {
 
 const graph = new StateGraph(State)
     .addNode("solution",solutionNode)
-    .addNode("judge", judgeNode)
+    .addNode("evaluator", judgeNode)
     .addEdge(START,"solution")
-    .addEdge("solution","judge")
-    .addEdge("judge",END)
+    .addEdge("solution","evaluator")
+    .addEdge("evaluator",END)
     .compile()
 
 export default async function (problem:string){
