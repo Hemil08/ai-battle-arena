@@ -2,7 +2,7 @@ export function generateOtp(){
     return Math.floor(100000 + Math.random() * 900000).toString()
 }
 
-export function getOtpHtml(otp) {
+export function getOtpHtml(otp:any) {
     return `<!DOCTYPE html>
 <html lang="en">
 <head>

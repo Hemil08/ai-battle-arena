@@ -40,6 +40,12 @@ export async function register(req:Request,res:Response){
 
     const otpHash = crypto.createHash("sha256").update(otp).digest("hex")
 
+    await otpModel.create({
+        email,
+        user: user._id,
+        otpHash
+    })
+
     await sendEmail (email, "OTP Verification", `Your OTP code is ${otp}`, html)
 
     res.status(201).json({
